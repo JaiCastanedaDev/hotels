@@ -167,7 +167,7 @@ export default {
                     })),
                 };
 
-                await axios.post(`http://localhost:8000/api/room-allocations/${this.hotel.id}`, payload);
+                await axios.post(`https://seal-app-m992d.ondigitalocean.app/api/room-allocations/${this.hotel.id}`, payload);
 
                 toast.success("Habitaciones asignadas correctamente.");
                 this.$emit("close");
@@ -184,7 +184,7 @@ export default {
         },
         async getTypeOptions() {
             try {
-                const response = await axios.get("http://localhost:8000/api/room-types");
+                const response = await axios.get("https://seal-app-m992d.ondigitalocean.app/api/room-types");
                 this.roomTypes = response.data;
             } catch (error) {
                 console.error("Error al obtener los tipos de habitación:", error);
@@ -192,7 +192,7 @@ export default {
         },
         async getRoomAllocations() {
             try {
-                const response = await axios.get(`http://localhost:8000/api/room-allocations/${this.hotel.id}`);
+                const response = await axios.get(`https://seal-app-m992d.ondigitalocean.app/api/room-allocations/${this.hotel.id}`);
 
                 this.rooms = response.data.map((allocation) => {
                     const roomType = this.roomTypes.find((type) => type.id === allocation.room_type_id);

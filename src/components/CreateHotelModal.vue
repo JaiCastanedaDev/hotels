@@ -62,7 +62,7 @@ export default {
       };
       const toast = useToast();
       try {
-        const response = await axios.post('http://localhost:8000/api/hotels', formData);
+        const response = await axios.post('https://seal-app-m992d.ondigitalocean.app/api/hotels', formData);
         this.response = response.data;
         toast.success('Hotel creado exitosamente');
         this.closeModal();

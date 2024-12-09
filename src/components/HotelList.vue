@@ -71,7 +71,7 @@ export default {
   methods: {
     async getHotels() {
     try {
-      const response = await axios.get('http://localhost:8000/api/hotels');
+      const response = await axios.get('https://seal-app-m992d.ondigitalocean.app/api/hotels');
       this.hotels = response.data;
     } catch (error) {
       throw new Error('Error al obtener los hoteles: ' + error);
@@ -93,7 +93,7 @@ export default {
     async deleteHotel(hotel) {
       const toast = useToast();
       try {
-        await axios.delete(`http://localhost:8000/api/hotels/${hotel.id}`);
+        await axios.delete(`https://seal-app-m992d.ondigitalocean.app/api/hotels/${hotel.id}`);
         toast.success('Hotel eliminado exitosamente');
         this.getHotels();
       } catch (error) {
